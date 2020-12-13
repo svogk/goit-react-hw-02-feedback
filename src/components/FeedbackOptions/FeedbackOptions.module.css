@@ -1,0 +1,16 @@
+.button {
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 5px 5px;
+  outline: none;
+}
+
+.button:active {
+  background-color: #0400ff;
+  color: white;
+}
