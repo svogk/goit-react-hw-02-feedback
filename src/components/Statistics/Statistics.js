@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import Notification from '../Notification/Notification';
 import s from './Statistics.module.css';
 
-export default function Statistics({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) {
-  return (
-    <div>
-      {total > 0 ? (
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+  if (total > 0) {
+    return (
+      <div>
         <ul className={s.list}>
           <li>Good: {good}</li>
           <li>Neutral: {neutral}</li>
@@ -20,12 +14,11 @@ export default function Statistics({
           <li>Total: {total}</li>
           <li>PositivePercentage: {positivePercentage}%</li>
         </ul>
-      ) : (
-        <Notification message="No feedback given"></Notification>
-      )}
-    </div>
-  );
-}
+      </div>
+    );
+  }
+  return <Notification message="No feedback given"></Notification>;
+};
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
@@ -34,3 +27,5 @@ Statistics.propTypes = {
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
+
+export default Statistics;

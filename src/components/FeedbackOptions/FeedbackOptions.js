@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
-  return options.map((option, index) => (
+  return options.map(option => (
     <button
-      key={index}
+      key={option}
       type="button"
       className={s.button}
       onClick={() => onLeaveFeedback(option)}
